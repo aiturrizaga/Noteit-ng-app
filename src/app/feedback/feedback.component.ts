@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-feedback',
@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedbackComponent implements OnInit {
 
-  constructor() { }
+  model: FeedbackViewModel = {
+    name: '',
+    email: '',
+    feedback: ''
+  };
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  sendFeedback(): void {
+    alert(this.model.name);
+  }
+
+}
+
+export interface FeedbackViewModel {
+  name: string;
+  email: string;
+  feedback: string;
 }
